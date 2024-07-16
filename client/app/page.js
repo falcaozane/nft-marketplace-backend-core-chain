@@ -17,13 +17,13 @@ export default function HomePage() {
             collectibles.
           </p>
           <div className="flex justify-center lg:justify-start items-center gap-8">
-            <Link href="/marketplace" className="flex bg-indigo-500 text-white font-semibold md:text-lg py-3 px-8 rounded-md transition duration-300 hover:bg-indigo-500 items-center">
+            <Link href="/marketplace" className="text-md flex bg-indigo-500 text-white font-semibold md:text-lg py-3 px-8 rounded-md transition duration-300 hover:bg-indigo-500 items-center">
               Buy Now
-              <IoRocketSharp className="ml-5 items-center justify-items-center" />
+              <IoRocketSharp className="ml-5 items-center justify-items-center h-8 w-8" />
             </Link>
-            <Link href="/sellNFT" className="flex bg-white text-indigo-600 font-semibold md:text-lg py-3 px-8 rounded-md transition duration-300 hover:bg-gray-300 items-center">
+            <Link href="/sellNFT" className="text-md flex bg-white text-indigo-600 font-semibold md:text-lg py-3 px-8 rounded-md transition duration-300 hover:bg-gray-300 items-center">
               List Now
-              <MdOutlineSell className="ml-5 items-center justify-items-center" />
+              <MdOutlineSell className="ml-5 items-center justify-items-center h-8 w-8" />
             </Link>
           </div>
         </div>
