@@ -96,7 +96,7 @@ export default function Profile() {
                       ))}
                     </div>
                   ) : (
-                    <div className="text-2xl min-h-screen font-bold text-red-500 text-center my-4">
+                    <div className="text-2xl min-h-screen font-bold text-indigo-100 text-center my-4">
                       You don&apos;t have any NFT...
                     </div>
                   )}

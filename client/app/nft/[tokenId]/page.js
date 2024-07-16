@@ -8,6 +8,7 @@ import axios from "axios";
 import GetIpfsUrlFromPinata from "@/utils/index";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { IoBagCheckOutline } from "react-icons/io5";
 
 export default function NFTPage() {
   const params = useParams();
@@ -152,12 +153,13 @@ export default function NFTPage() {
                       ) : (
                         <button
                           onClick={buyNFT}
-                          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                          className="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
                         >
                           {btnContent === "Processing..." && (
                             <span className="spinner" />
                           )}
                           {btnContent}
+                          <IoBagCheckOutline className="ml-4 text-white font-bold h-5 w-5" />
                         </button>
                       )
                     ) : (
