@@ -103,19 +103,19 @@ export default function NFTPage() {
   }
 
   const PlaceholderCard = () => (
-    <div className="w-full md:h-80 bg-gray-500 border border-slate-400 animate-pulse rounded-lg"></div>
+    <div className="w-full md:h-80 bg-indigo-500 border-2 border-indigo-400 animate-pulse rounded-lg"></div>
   );
 
   return (
-    <div className="flex flex-col h-screen bg-slate-300">
-      <div className="flex flex-col items-center justify-center flex-grow">
+    <div className="flex flex-col h-screen bg-gradient-to-b from-indigo-950 to-indigo-900">
+      <div className="flex flex-col items-center justify-center flex-grow mx-2">
         {isConnected ? (
           loading ? (
             <div className="flex items-center justify-center h-screen">
               <PlaceholderCard />
             </div>
           ) : (
-            <div className="bg-white max-w-6xl w-full mx-2 md:mx-auto shadow-lg rounded-lg p-4 overflow-hidden">
+            <div className="border-2 border-indigo-800 max-w-6xl w-full mx-2 md:mx-auto shadow-lg rounded-lg p-4 overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="w-full">
                   <Image
@@ -127,27 +127,26 @@ export default function NFTPage() {
                     loading="lazy"
                   />
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col justify-between md:p-4">
+                <div className="w-full flex flex-col justify-between md:p-4">
                   <div className="space-y-4">
-                    <div className="text-xl font-bold text-orange-600">
+                    <div className="md:text-xl font-bold text-indigo-100">
                       <p>Name: {item?.name}</p>
                     </div>
-                    <div className="text-xl font-bold text-orange-600">
+                    <div className="md:text-xl font-bold text-indigo-100">
                       <p>Description: {item?.description}</p>
                     </div>
-                    <div className="text-xl font-bold text-orange-600">
-                      <p>Price: {item?.price} Celo</p>
+                    <div className="md:text-xl font-bold text-indigo-100">
+                      <p>Price: {item?.price} tCore</p>
                     </div>
-                    <div className="flex text-xl font-bold text-orange-600 items-center">
-                      <p>Seller: </p>
-                      <p className="text-sm mx-2">{item?.seller}</p>
+                    <div className="flex md:text-xl font-bold text-indigo-100 items-center justify-items-center text-center">
+                      <p className="flex items-center">Seller: <p className="text-md md:mx-2 mx-1">{item?.seller.slice(0, 16)}...</p> </p>
                     </div>
                   </div>
                   <div className="mt-4 text-center">
-                    <div className="text-red-600 text-lg">{msg}</div>
+                    <div className="text-indigo-100 text-lg">{msg}</div>
                     {item?.isListed ? (
                       userAddress.toLowerCase() === item?.seller.toLowerCase() ? (
-                        <div className="text-red-600 font-bold">
+                        <div className="text-indigo-50 font-bold">
                           You already own this NFT!
                         </div>
                       ) : (
@@ -162,7 +161,7 @@ export default function NFTPage() {
                         </button>
                       )
                     ) : (
-                      <div className="text-red-600 font-bold">
+                      <div className="text-indigo-100 font-bold">
                         <p className="text-sm md:text-xl">
                           This NFT was bought by: {item?.owner}
                         </p>

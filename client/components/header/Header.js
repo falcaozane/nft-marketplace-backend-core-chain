@@ -45,25 +45,25 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 left-0 w-full bg-gray-800 text-white p-4 shadow-lg">
+    <header className="sticky top-0 z-20 left-0 w-full bg-indigo-950 text-white p-4 shadow-lg">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <div className="text-lg md:text-2xl font-bold">
-          <Link href="/">NFT marketplace</Link>
+          <Link href="/">Ignitus Network</Link>
         </div>
         <nav className="hidden md:flex items-center space-x-4">
           <ul className="flex space-x-16">
             <li>
-              <Link href="/marketplace" className="text-blue-200 hover:text-blue-400">
+              <Link href="/marketplace" className="hover:text-blue-100 hover:underline">
                 MarketPlace
               </Link>
             </li>
             <li>
-              <Link href="/sellNFT" className="text-blue-200 hover:text-blue-400">
+              <Link href="/sellNFT" className="hover:text-blue-100 hover:underline">
                 List
               </Link>
             </li>
             <li>
-              <Link href="/profile" className="text-blue-200 hover:text-blue-400">
+              <Link href="/profile" className="hover:text-blue-100 hover:underline">
                 Profile
               </Link>
             </li>
@@ -71,7 +71,7 @@ export default function Header() {
         </nav>
         <button
           className={`px-4 py-2 rounded-md flex items-center ${
-            isConnected ? "bg-red-700 cursor-not-allowed" : "bg-red-500 hover:bg-red-600"
+            isConnected ? "bg-indigo-600 cursor-not-allowed" : "bg-indigo-500 hover:bg-indigo-400"
           }`}
           onClick={connectWallet}
         >

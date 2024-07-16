@@ -69,18 +69,18 @@ export default function Marketplace() {
   }, [isConnected, signer]); // Added signer and getNFTitems as dependencies
 
   return (
-    <div className="flex flex-col min-h-screen bg-red-100">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-indigo-950 to-indigo-900">
       <div className="flex flex-col items-center flex-grow">
         <div className="max-w-6xl w-full mx-auto p-4 flex-grow py-5">
           {isConnected ? (
             <>
               <div className="my-5">
-                <h2 className="text-4xl font-bold text-center text-red-500 mb-7 uppercase">
+                <h2 className="text-4xl font-bold text-center text-indigo-50 mb-7 uppercase">
                   Marketplace
                 </h2>
                 {loading ? (
                   <div className="flex justify-center items-center h-64">
-                    <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin border-white mt-14"></div>
+                    <div className="w-40 h-40 border-4 border-dashed rounded-full animate-spin border-white mt-14"></div>
                   </div>
                 ) : items.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -96,7 +96,7 @@ export default function Marketplace() {
               </div>
             </>
           ) : (
-            <div className="text-3xl font-bold text-red-500 text-center my-4 h-screen">
+            <div className="text-3xl font-bold text-indigo-100 text-center items-center my-10 pt-20 h-screen">
               You are not connected...
             </div>
           )}
