@@ -5,27 +5,31 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full mt-auto bg-gradient-to-b from-indigo-950 to-indigo-900 text-white p-2 shadow-lg">
-      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
-        <div className='flex flex-1 space-x-5 md:space-x-72'>
-          <p className="text-md my-2">Copyright &copy; {year} Ignitus Network. All rights reserved!</p>
-          <ul className="flex space-x-4 my-2">
-            <li>
-              <Link href="#">
-                <FaTwitter className='text-white' size={20} />
-              </Link>
-            </li>
-            <li>
-              <Link href="https://telegram.org/">
-                <FaTelegram className='text-white' size={20} />
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                <FaYoutube className='text-white' size={20} />
-              </Link>
-            </li>
-          </ul>
+    <footer className="w-full py-6 bg-gradient-to-b from-indigo-950 to-indigo-900 text-white shadow-lg">
+      <div className="max-w-6xl mx-auto ">
+        <div className='flex justify-between'>
+          <div className="">
+            <p className="text-sm my-2 text-gray-400">Copyright &copy; {year} Ignitus Network. All rights reserved!</p>
+          </div>
+          <div className="">
+            <ul className="flex space-x-5 my-2">
+              <li>
+                <Link href="#">
+                  <FaTwitter className='text-white  hover:text-[#818CF8]' size={20} />
+                </Link>
+              </li>
+              <li>
+                <Link href="https://telegram.org/">
+                  <FaTelegram className='text-white hover:text-[#818CF8]' size={20} />
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <FaYoutube className='text-white hover:text-[#818CF8]' size={20} />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

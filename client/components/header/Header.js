@@ -50,40 +50,44 @@ export default function Header() {
         <div className="text-lg md:text-2xl font-bold">
           <Link href="/">Ignitus Network</Link>
         </div>
-        <nav className="hidden md:flex items-center space-x-4">
-          <ul className="flex space-x-16">
-            <li>
-              <Link href="/marketplace" className="hover:text-blue-100 hover:underline">
-                MarketPlace
-              </Link>
-            </li>
-            <li>
-              <Link href="/sellNFT" className="hover:text-blue-100 hover:underline">
-                List
-              </Link>
-            </li>
-            <li>
-              <Link href="/profile" className="hover:text-blue-100 hover:underline">
-                Profile
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <button
-          className={`px-4 py-2 rounded-md flex items-center ${
-            isConnected ? "bg-indigo-600 cursor-not-allowed" : "bg-indigo-500 hover:bg-indigo-400"
-          }`}
-          onClick={connectWallet}
-        >
-          {isConnected ? (
-            <>{userAddress?.slice(0, 10)}...</>
-          ) : (
-            <>
-              <SiWalletconnect className='md:mr-4' />
-              <span className='hidden md:inline-block'>Connect Wallet</span>
-            </>
-          )}
-        </button>
+        <div className="flex space-x-10 items-center">
+          <div className="hidden md:flex items-center space-x-4 text-sm">
+            <ul className="flex space-x-10 text-[#6A6E9F] font-semibold">
+              <li>
+                <Link href="/marketplace" className="hover:text-blue-100 ">
+                  MarketPlace
+                </Link>
+              </li>
+              <li>
+                <Link href="/sellNFT" className="hover:text-blue-100 ">
+                  List
+                </Link>
+              </li>
+              <li>
+                <Link href="/profile" className="hover:text-blue-100 ">
+                  Profile
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="">
+            <button
+              className={`px-4 py-2 rounded-full text-sm flex items-center ${
+                isConnected ? "bg-indigo-600 cursor-not-allowed" : "bg-indigo-500 hover:bg-indigo-400"
+              }`}
+              onClick={connectWallet}
+              >
+              {isConnected ? (
+                <>{userAddress?.slice(0, 10)}...</>
+              ) : (
+                <>
+                  <SiWalletconnect className='md:mr-4' />
+                  <span className='hidden md:inline-block'>Connect Wallet</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <FaTimes /> : <FaBars />}
