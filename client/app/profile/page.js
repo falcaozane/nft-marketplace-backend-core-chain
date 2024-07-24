@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import MarketplaceJson from "@/app/marketplace.json";
 import axios from "axios";
-import NFTCard from "@/components/nftCard/NFTCard";
+import NFTTile from "@/components/nftCard/NFTCard";
 
 export default function Profile() {
   const [items, setItems] = useState([]);
@@ -25,6 +25,9 @@ export default function Profile() {
     let transaction = await contract.getMyNFTs();
 
     for (const i of transaction) {
+      // Filter out NFTs where the current user is the seller but not the owner
+      if (i.owner.toLowerCase() !== userAddress.toLowerCase()) continue;
+      
       const tokenId = parseInt(i.tokenId);
       const tokenURI = await contract.tokenURI(tokenId);
       const meta = (await axios.get(tokenURI)).data;
@@ -92,7 +95,7 @@ export default function Profile() {
                   {items?.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {items?.map((value, index) => (
-                        <NFTCard item={value} key={index} />
+                        <NFTTile item={value} key={index} />
                       ))}
                     </div>
                   ) : (
