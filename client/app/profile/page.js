@@ -25,9 +25,6 @@ export default function Profile() {
     let transaction = await contract.getMyNFTs();
 
     for (const i of transaction) {
-      // Filter out NFTs where the current user is the seller but not the owner
-      if (i.owner.toLowerCase() !== userAddress.toLowerCase()) continue;
-      
       const tokenId = parseInt(i.tokenId);
       const tokenURI = await contract.tokenURI(tokenId);
       const meta = (await axios.get(tokenURI)).data;
