@@ -5,10 +5,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full py-6 bg-gradient-to-b from-indigo-950 to-indigo-900 text-white shadow-lg">
-      <div className="max-w-6xl mx-auto ">
+    <footer className="w-full py-6 bg-gradient-to-t from-indigo-950 to-indigo-900 text-white shadow-lg">
+      <div className="max-w-6xl mx-auto px-2 md:px-0">
         <div className='flex justify-between'>
-          <div className="">
+          <div className="pr-8">
             <p className="text-sm my-2 text-gray-400">Copyright &copy; {year} Ignitus Network. All rights reserved!</p>
           </div>
           <div className="">

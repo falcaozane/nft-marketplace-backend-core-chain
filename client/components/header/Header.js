@@ -45,7 +45,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 left-0 w-full bg-gradient-to-b from-indigo-950 to-indigo-900 text-white p-4 shadow-lg">
+    <header className="sticky top-0 z-20 left-0 w-full bg-gradient-to-t from-indigo-950 to-indigo-900 text-white p-4 shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <div className="text-lg md:text-2xl font-bold">
           <Link href="/">Ignitus Network</Link>
