@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import MarketplaceJson from "@/app/marketplace.json";
 import axios from "axios";
-import NFTTile from "@/components/nftCard/NFTCard";
+import NFTCard from "@/components/nftCard/NFTCard";
 
 export default function Profile() {
   const [items, setItems] = useState([]);
@@ -92,7 +92,7 @@ export default function Profile() {
                   {items?.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {items?.map((value, index) => (
-                        <NFTTile item={value} key={index} />
+                        <NFTCard item={value} key={index} />
                       ))}
                     </div>
                   ) : (

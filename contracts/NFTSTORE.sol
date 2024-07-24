@@ -116,14 +116,14 @@ contract NFTSTORE is ERC721URIStorage {
         uint256 currentIndex = 0;
 
         for (uint256 i = 0; i < totalNFTCount; i++) {
-            if (tokenIdToListing[i + 1].owner == msg.sender || tokenIdToListing[i + 1].seller == msg.sender) {
+            if ((tokenIdToListing[i + 1].owner == msg.sender || tokenIdToListing[i + 1].seller == msg.sender) && tokenIdToListing[i + 1].isListed) {
                 myNFTCount++;
             }
         }
 
         NFTListing[] memory myNFTs = new NFTListing[](myNFTCount);
         for (uint256 i = 0; i < totalNFTCount; i++) {
-            if (tokenIdToListing[i + 1].owner == msg.sender || tokenIdToListing[i + 1].seller == msg.sender) {
+            if ((tokenIdToListing[i + 1].owner == msg.sender || tokenIdToListing[i + 1].seller == msg.sender) && tokenIdToListing[i + 1].isListed) {
                 uint256 tokenId = i + 1;
                 NFTListing storage listing = tokenIdToListing[tokenId];
                 myNFTs[currentIndex] = listing;
@@ -133,4 +133,5 @@ contract NFTSTORE is ERC721URIStorage {
 
         return myNFTs;
     }
+
 }

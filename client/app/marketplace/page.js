@@ -89,7 +89,7 @@ export default function Marketplace() {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-2xl font-bold text-red-400 text-center my-8 py-16 h-screen">
+                  <div className="text-2xl font-bold text-white text-center my-8 py-16 h-screen">
                     No NFT Listed Now...
                   </div>
                 )}
