@@ -30,6 +30,8 @@ export default function NFTPage() {
     let tokenURI = await contract.tokenURI(tokenId);
     const listedToken = await contract.getNFTListing(tokenId);
 
+    console.log(listedToken)
+
     const ipfsUrls = GetIpfsUrlFromPinata(tokenURI);
 
     let meta;
@@ -139,9 +141,9 @@ export default function NFTPage() {
                     <div className="md:text-xl font-bold text-indigo-100">
                       <p>Price: {item?.price} tCore</p>
                     </div>
-                    <div className="flex md:text-xl font-bold text-indigo-100 items-center justify-items-center text-center">
+                    {/* <div className="flex md:text-xl font-bold text-indigo-100 items-center justify-items-center text-center">
                       <p className="flex items-center">Seller: <p className="text-md md:mx-2 mx-1">{item?.seller.slice(0, 16)}...</p> </p>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="mt-4 text-center">
                     <div className="text-indigo-100 text-lg">{msg}</div>
